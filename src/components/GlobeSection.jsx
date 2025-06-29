@@ -3,16 +3,31 @@ import indoImg from '../image/indo.png';
 
 export default function GlobeSection() {
   return (
-    <section className="flex flex-col items-center py-16 bg-[#FFF1CA]">
-      <button
-        className="mt-2 mb-8 px-[80px] py-[36px] rounded-full bg-[#FFC629] border-[10px] border-[#69884E] shadow-xl font-bold text-[40px] tracking-widest"
+    <section className="flex flex-col items-center py-16 bg-[#]">
+      <div
+        className="
+          mx-auto mb-8 
+          px-[60px] py-[30px]
+          rounded-full bg-[#FFB823] 
+          border-[10px] border-[#69884E] 
+          shadow-xl flex items-center justify-center
+        "
         style={{
-          boxShadow: "0px 7px 20px rgba(0, 0, 0, 0.25)",
+          boxShadow: "0px 8px 10px rgba(0,0,0,0.25)",
+          width: "fit-content",
           letterSpacing: "0.30em",
         }}
       >
-        THE GRAND PLAN
-      </button>
+        <span
+          className="font-extrabold text-3xl tracking-widest text-[#000000]"
+          style={{
+            fontFamily: "'Inter', sans-serif",
+            letterSpacing: "0.70em",
+          }}
+        >
+          THE GRAND PLAN
+        </span>
+      </div>
 
       <div className="flex flex-row items-center gap-[72px] mt-4">
         <div className="relative w-[300px] h-[300px]">
@@ -57,6 +72,7 @@ export default function GlobeSection() {
             style={{
               fontFamily: "'Inter', Arial, sans-serif",
               fontSize: '22px',
+              color: '#000',
               letterSpacing: '0.16em',
               marginTop: '12px',
               fontWeight: 300,
