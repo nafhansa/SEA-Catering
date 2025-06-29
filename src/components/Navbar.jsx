@@ -17,6 +17,9 @@ export default function Navbar() {
           menu.isButton ? (
             <li key={menu.name}>
               <button
+                onClick={() => {
+                  document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="px-6 py-2 rounded-full bg-[#F6EEDC] text-[#254423] font-bold tracking-widest text-[17px] font-['Inter'] shadow 
                   focus:outline-none transition-all duration-300 hover:text-[23px] hover:scale-105"
                 style={{ letterSpacing: "0.13em" }}
