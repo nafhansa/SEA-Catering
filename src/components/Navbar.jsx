@@ -1,0 +1,43 @@
+export default function Navbar() {
+  const menus = [
+    { name: "HOME", isButton: true },
+    { name: "MEALS" },
+    { name: "CONTACT US" },
+    { name: "SUBSCRIPTION" },
+    { name: "LOGIN" },
+  ];
+
+  return (
+    <nav
+      className="bg-[#254423] px-8 py-3 rounded-b-2xl shadow-lg flex items-center justify-center"
+      style={{ minHeight: 74 }}
+    >
+      <ul className="flex w-full max-w-5xl justify-between items-center">
+        {menus.map((menu) =>
+          menu.isButton ? (
+            <li key={menu.name}>
+              <button
+                className="px-6 py-2 rounded-full bg-[#F6EEDC] text-[#254423] font-bold tracking-widest text-[17px] font-['Inter'] shadow 
+                  focus:outline-none transition-all duration-300 hover:text-[23px] hover:scale-105"
+                style={{ letterSpacing: "0.13em" }}
+              >
+                {menu.name}
+              </button>
+            </li>
+          ) : (
+            <li key={menu.name}>
+              <a
+                href="#"
+                className="text-[#F6EEDC] font-bold text-[17px] font-['Inter'] tracking-widest px-4 py-2 rounded 
+                  transition-all duration-300 hover:text-[23px] hover:text-[#FFF9E5] focus:outline-none"
+                style={{ letterSpacing: "0.13em" }}
+              >
+                {menu.name}
+              </a>
+            </li>
+          )
+        )}
+      </ul>
+    </nav>
+  );
+}
