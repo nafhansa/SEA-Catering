@@ -3,7 +3,7 @@ export default function HeroSection() {
     color: "#FFF1CA",
     WebkitTextFillColor: "#FFF1CA",
     WebkitTextStroke: "7px #2D4F2B", 
-    textShadow: "-8px 8px 5px rgba(0,0,0,0.30)",
+    textShadow: "-10px 8px 5px rgba(0,0,0,0.30)",
   };
 
   return (
