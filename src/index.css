@@ -6,3 +6,12 @@ body {
   background: #FFF1CA;
 }
 
+.keen-slider {
+  margin-left: auto;
+  margin-right: auto;
+}
+.keen-slider__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

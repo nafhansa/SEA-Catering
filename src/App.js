@@ -4,6 +4,9 @@ import GlobeSection from "./components/GlobeSection";
 import FaqContactButton from "./components/FaqContactButton";
 import TestimonialCarousel from "./components/TestimonialCarousel";
 import Footer from "./components/Footer";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 function App() {
   return (

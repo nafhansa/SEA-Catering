@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="sticky top-0 bg-[#254423] px-8 py-3 rounded-b-2xl shadow-lg flex items-center justify-center"
+      className="sticky top-0 z-50 bg-[#254423] px-8 py-3 rounded-b-2xl shadow-lg flex items-center justify-center"
       style={{ minHeight: 74 }}
     >
       <ul className="flex w-full max-w-5xl justify-between items-center">

@@ -10,7 +10,7 @@ export default function HeroSection() {
     <section id="hero" className="py-24 px-4">
       <div className="space-y-16">
         <h1
-          className="uppercase text-[70px] tracking-[0.2em] mx-[95px]"
+          className="uppercase text-[70px] tracking-[0.2em] mx-[75px]"
           style={{
             ...outlineStyle,
             fontFamily: "'Archivo Black', 'Inter', sans-serif",
