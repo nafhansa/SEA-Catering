@@ -2,7 +2,6 @@ import React from "react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
-// Data dummy testimoni
 const testimonials = [
   {
     name: "Daniel W.S.M.",
@@ -26,7 +25,6 @@ const testimonials = [
   },
 ];
 
-// Bintang custom
 function Star({ filled }) {
   return (
     <svg viewBox="0 0 20 20" className="w-8 h-8 inline" fill={filled ? "#FFD600" : "#FFF1CA"} stroke="#FFD600">
@@ -35,7 +33,6 @@ function Star({ filled }) {
   );
 }
 
-// Komponen Card Testimoni
 function TestiCard({ data, isActive }) {
   return (
     <div
@@ -76,7 +73,6 @@ function TestiCard({ data, isActive }) {
   );
 }
 
-// Fungsi shift index untuk card aktif di tengah
 function getCenterIndex(current, total, perView = 3) {
   return (current + Math.floor(perView / 2)) % total;
 }
@@ -84,7 +80,6 @@ function getCenterIndex(current, total, perView = 3) {
 export default function TestimonialCarousel() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
-  // 3*640 + 2*36 = 1992px (card 640px, gap 36px, 3 cards)
   const SLIDER_WIDTH = 1992;
   const PER_VIEW = 3;
 
@@ -128,20 +123,19 @@ export default function TestimonialCarousel() {
     select-none
   "
   style={{
-    fontFamily: "'Archivo Black', 'Inter', sans-serif",  // Boleh ganti ke Inter aja
+    fontFamily: "'Archivo Black', 'Inter', sans-serif",  
     letterSpacing: "0.22em",
     wordBreak: "break-word",
     hyphens: "auto",
-    textShadow: "0px 2px 20px rgba(112,138,88,0.11)", // Efek shadow soft, opsional
+    textShadow: "0px 2px 20px rgba(112,138,88,0.11)", 
   }}
 >
   DON'T TAKE OUR WORDS FOR IT.
   <br className="hidden md:block" />
   TAKE THEIRS.
 </h2>
-      {/* Tambahkan padding pada wrapper keen-slider agar shadow tidak terpotong */}
+      
       <div className="relative flex justify-center items-center w-full py-20 px-4 md:px-12 lg:px-32" style={{ minHeight: 400 }}>
-        {/* LEFT BUTTON */}
         <button
           onClick={prev}
           aria-label="Previous"
@@ -153,7 +147,6 @@ export default function TestimonialCarousel() {
             <path d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        {/* SLIDER CENTERED - WRAPPED IN MAX-W CONTAINER & MX-AUTO */}
         <div className="w-full flex justify-center">
           <div
             ref={sliderRef}
@@ -178,7 +171,6 @@ export default function TestimonialCarousel() {
             ))}
           </div>
         </div>
-        {/* RIGHT BUTTON */}
         <button
           onClick={next}
           aria-label="Next"
@@ -191,7 +183,6 @@ export default function TestimonialCarousel() {
           </svg>
         </button>
       </div>
-      {/* ADD YOURS BUTTON */}
       <button className="mt-10 px-12 py-3 bg-[#FFF1CA] border-[8px] border-[#708A58] rounded-full font-bold tracking-[0.17em] text-[#708A58] text-xl transition hover:bg-[#f8edcb] hover:scale-105"
         style={{
           boxShadow: "0 5px 30px 0 rgba(0, 0, 0, 0.18)",
