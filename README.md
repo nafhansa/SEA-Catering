@@ -40,15 +40,7 @@ Aplikasi ini mengerjakan challenge hingga **Level 3**.
   - Modal/detail plan
 - **Testimonial carousel:**  
   - Swipe atau tombol prev-next  
-  - User bisa submit testimonial baru (nama, review, rating)
-
-### Level 3: Subscription System
-- **Form subscription:**  
-  - Pilihan meal plan, tipe meal, hari, alergi  
-  - Kalkulasi total harga otomatis  
-  - Validasi field  
-- Submit data hanya simulasi (belum tersambung backend)
-
+    
 ---
 
 ## 🛠️ Cara Instalasi & Menjalankan
