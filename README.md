@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# SEA Catering – Technical Challenge COMPFEST 17
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Web aplikasi subscription healthy meals untuk challenge Software Engineering Academy COMPFEST 17.  
+**Fitur lengkap hingga Level 3: landing page, interaktif, subscription, testimonial.**
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Demo & Preview
 
-### `npm start`
+> **Deploy:**  
+> [https://sea-catering.vercel.app/](https://sea-catering.vercel.app/)  
+> *(Ganti dengan link deploy kamu jika sudah deploy, atau hapus section ini.)*
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📦 Project Overview
 
-### `npm test`
+SEA Catering adalah aplikasi landing page subscription meal sehat dengan:
+- Informasi bisnis SEA Catering & slogan
+- Menu meal plan yang interaktif
+- Testimonial carousel (user bisa tambah review)
+- Form subscription interaktif & auto kalkulasi harga
+- Kontak/FAQ, serta info admin
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Aplikasi ini mengerjakan challenge hingga **Level 3**.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧩 Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Level 1: Landing Page
+- **Homepage** dengan logo, slogan, penjelasan layanan
+- Section globe delivery area
+- Kontak admin (Manager: Brian, 08123456789)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Level 2: Interaktif
+- **Navbar** responsif (link: Home, Menu, Subscribe, Contact)
+- **Menu meal plan:**  
+  - Kartu meal plan  
+  - Modal/detail plan
+- **Testimonial carousel:**  
+  - Swipe atau tombol prev-next  
+  - User bisa submit testimonial baru (nama, review, rating)
 
-### `npm run eject`
+### Level 3: Subscription System
+- **Form subscription:**  
+  - Pilihan meal plan, tipe meal, hari, alergi  
+  - Kalkulasi total harga otomatis  
+  - Validasi field  
+- Submit data hanya simulasi (belum tersambung backend)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🛠️ Cara Instalasi & Menjalankan
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone repo**
+   ```bash
+   git clone https://github.com/nafhansa/SEA-Catering.git
+   cd SEA-Catering
+   npm install
+   npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
+src/
+├── components/
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── HeroSection.jsx
+│   ├── GlobeSection.jsx
+│   ├── TestimonialCarousel.jsx
+│   ├── FaqContactButton.jsx
+│   └── ...
+├── pages/
+│   ├── Home.jsx
+│   ├── Menu.jsx
+│   ├── Subscription.jsx
+│   └── ...
+├── image/
+│   └── ... (assets)
+├── App.js
+└── index.js
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
