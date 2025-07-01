@@ -1,59 +1,80 @@
-import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const menus = [
-  { name: "HOME", isButton: true },
-  { name: "MEALS" },
-  { name: "CONTACT US" },
-  { name: "SUBSCRIPTION" },
-  { name: "LOGIN" },
+  { name: "HOME", path: "/" },
+  { name: "MEALS", path: "/meals" },
+  { name: "CONTACT US", scrollTo: "contact-us" },
+  { name: "SUBSCRIPTION", path: "/subscription" },
+  { name: "LOGIN", path: "/login" },
 ];
 
 export default function Navbar() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  function isActive(menu) {
+    if (menu.name === "HOME" && location.pathname === "/") return true;
+    if (menu.name === "MEALS" && location.pathname.startsWith("/meals")) return true;
+    if (menu.path && location.pathname === menu.path) return true;
+    return false;
+  }
+
   return (
     <nav className="sticky top-0 z-50 bg-[#254423] px-8 py-3 rounded-b-2xl shadow-lg flex items-center justify-center" style={{ minHeight: 74 }}>
       <ul className="flex w-full max-w-5xl justify-between items-center">
-        {menus.map((menu) =>
-          menu.isButton ? (
-            <li key={menu.name}>
+        {menus.map((menu) => (
+          <li key={menu.name}>
+            {/* Tombol HOME dengan logic scroll/navigate */}
+            {menu.name === "HOME" ? (
               <button
                 onClick={() => {
-                  document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+                  if (location.pathname === "/") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  } else {
+                    navigate("/");
+                  }
                 }}
-                className="px-6 py-2 rounded-full bg-[#F6EEDC] text-[#254423] font-bold tracking-widest text-[17px] font-['Inter'] shadow 
-                  focus:outline-none transition-all duration-300 hover:text-[23px] hover:scale-105"
+                className={`
+                  ${isActive(menu)
+                    ? "bg-[#F6EEDC] text-[#254423] rounded-full px-6 py-2 shadow"
+                    : "text-[#F6EEDC] hover:text-[#FFF9E5] px-4 py-2"}
+                  font-bold text-[17px] font-['Inter'] tracking-widest transition-all duration-300
+                  focus:outline-none hover:text-[23px]
+                `}
                 style={{ letterSpacing: "0.13em" }}
               >
                 {menu.name}
               </button>
-            </li>
-          ) : (
-            <li key={menu.name}>
-              {menu.name === "CONTACT US" ? (
-                <a
-                  href="#contact-us"
-                  onClick={e => {
-                    e.preventDefault();
-                    document.getElementById('contact-us')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="text-[#F6EEDC] font-bold text-[17px] font-['Inter'] tracking-widest px-4 py-2 rounded 
-                    transition-all duration-300 hover:text-[23px] hover:text-[#FFF9E5] focus:outline-none cursor-pointer"
-                  style={{ letterSpacing: "0.13em" }}
-                >
-                  {menu.name}
-                </a>
-              ) : (
-                <a
-                  href="#"
-                  className="text-[#F6EEDC] font-bold text-[17px] font-['Inter'] tracking-widest px-4 py-2 rounded 
-                    transition-all duration-300 hover:text-[23px] hover:text-[#FFF9E5] focus:outline-none"
-                  style={{ letterSpacing: "0.13em" }}
-                >
-                  {menu.name}
-                </a>
-              )}
-            </li>
-          )
-        )}
+            ) : menu.scrollTo ? (
+              <a
+                href={`#${menu.scrollTo}`}
+                onClick={e => {
+                  e.preventDefault();
+                  document.getElementById(menu.scrollTo)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className={`font-bold text-[17px] font-['Inter'] tracking-widest px-4 py-2 rounded transition-all duration-300 focus:outline-none cursor-pointer
+                  text-[#F6EEDC] hover:text-[23px] hover:text-[#FFF9E5]`}
+                style={{ letterSpacing: "0.13em" }}
+              >
+                {menu.name}
+              </a>
+            ) : (
+              <button
+                onClick={() => navigate(menu.path)}
+                className={`
+                  ${isActive(menu)
+                    ? "bg-[#F6EEDC] text-[#254423] rounded-full px-6 py-2 shadow"
+                    : "text-[#F6EEDC] hover:text-[#FFF9E5] px-4 py-2"}
+                  font-bold text-[17px] font-['Inter'] tracking-widest transition-all duration-300
+                  focus:outline-none hover:text-[23px]
+                `}
+                style={{ letterSpacing: "0.13em" }}
+              >
+                {menu.name}
+              </button>
+            )}
+          </li>
+        ))}
       </ul>
     </nav>
   );
